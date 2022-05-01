@@ -1,15 +1,19 @@
 import React, {useState} from "react";
 
-const CreateNote = () => {
+const CreateNote = ({createNote}) => {
 
 const [note, setNote] = useState('');
 
 const handleSubmit = (e) => {
           e.preventDefault();
           const data = {
-                    note
+                    note,
+                    id:Math.floor(Math.random()*1000),
+                    date:new Date().toJSON().slice(0,10),
+                    isImportant: false
           }
-          console.log(data);
+           
+          createNote(data);
 }
 
 
