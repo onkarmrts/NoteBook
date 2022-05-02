@@ -1,15 +1,17 @@
 import React from 'react'
 import Note from './Note';
 
-const AllNotes = ({notes}) => {
+const AllNotes = ({notes, toggle_note}) => {
 
 
   return (
     <div className='my-3'>
               <h5>All Notes</h5>
+              <div className='row'>
               {
-                  notes.map(note => <Note key={note.id} note={note}/>)
+                  notes.map(note => <Note key={note.id} note={note} toggle_note={toggle_note}/>)
               }
+              </div>
     </div>
   )
 }
