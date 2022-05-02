@@ -5,7 +5,7 @@ const CreateNote = () => {
 const [note, setNote] = useState('');
 
 const handleSubmit = (e) => {
-          e.preventDeafult();
+          e.preventDefault();
           const data = {
                     note
           }
