@@ -1,6 +1,7 @@
 import React, {useState} from "react";
+import { store } from "../Redux/store";
 
-const CreateNote = ({createNote}) => {
+const CreateNote = () => {
 
 const [note, setNote] = useState('');
 
@@ -12,8 +13,11 @@ const handleSubmit = (e) => {
                     date:new Date().toJSON().slice(0,10),
                     isImportant: false
           }
-           
-          createNote(data);
+           store.dispatch({
+             type:"ADD_NOTE",
+             paylod: data
+           })
+         
 }
 
 

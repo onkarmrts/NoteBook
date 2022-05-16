@@ -15,7 +15,7 @@ const App = () => {
 
   const toggle_note = (id) => {
     const new_notes = notes.slice();
-    const index = new_notes.findIndex(note=>note.id == id);
+    const index = new_notes.findIndex(note=>note.id === id);
 
     const note = new_notes[index]
 
@@ -29,7 +29,7 @@ const App = () => {
 
   }
 
-  console.log(notes);
+  // console.log(notes);
 
 
   return (
@@ -38,7 +38,7 @@ const App = () => {
       <hr/>
       <ImportantNotes notes={notes} toggle_note={toggle_note}/>
       <hr/>
-      <AllNotes notes={notes} toggle_note={toggle_note}/>
+      <AllNotes  toggle_note={toggle_note}/>
 
     </div>
   )
